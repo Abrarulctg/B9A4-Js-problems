@@ -34,3 +34,22 @@ function checkName(name) {
         }
     }
 }
+
+
+
+
+function deleteInvalids(array) {
+    let newArray = [];
+    if (Array.isArray(array) === true) {
+        for (const arr of array) {
+            if (typeof arr === 'number' && !isNaN(arr)) {
+                newArray.push(arr);
+            }
+        }
+        return newArray;
+    }
+    else {
+        return "Please provide an array";
+
+    }
+}
