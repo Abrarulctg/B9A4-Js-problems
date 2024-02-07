@@ -14,5 +14,5 @@ function calculateMoney(ticketSale) {
     return totalRemainingIncome;
 }
 
-const res = calculateMoney(5);
+const res = calculateMoney(-93);
 console.log(res);
