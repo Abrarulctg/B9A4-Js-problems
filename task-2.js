@@ -1,6 +1,6 @@
 function checkName(name) {
     if (typeof name !== 'string') {
-        return "Invalid"
+        return "invalid"
     }
     else {
         let newName = [];
@@ -17,6 +17,5 @@ function checkName(name) {
     }
 }
 
-const res = checkName(["Rashed"]);
-
+const res = checkName(519);
 console.log(res)

@@ -12,7 +12,7 @@ function monthlySavings(array, livingCost) {
         }
         const totalSavings = sumOfEarning - livingCost;
         if (totalSavings < 0) {
-            return "Earn More";
+            return "earn more";
         }
         else {
             return totalSavings;

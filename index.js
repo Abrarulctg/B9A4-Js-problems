@@ -18,7 +18,7 @@ function calculateMoney(ticketSale) {
 
 function checkName(name) {
     if (typeof name !== 'string') {
-        return "Invalid"
+        return "invalid"
     }
     else {
         let newName = [];
@@ -36,8 +36,6 @@ function checkName(name) {
 }
 
 
-
-
 function deleteInvalids(array) {
     let newArray = [];
     if (Array.isArray(array) === true) {
@@ -51,5 +49,48 @@ function deleteInvalids(array) {
     else {
         return "Please provide an array";
 
+    }
+}
+
+
+function password(object) {
+    const objectKeys = Object.keys(object);
+
+    let birthYear1 = (object.birthYear);
+    let strBirthYear = birthYear1.toString();
+
+    if (objectKeys.length !== 3 || strBirthYear.length !== 4) {
+        return "invalid";
+    }
+    else {
+        const password = object.siteName + "#" + object.name + "@" + object.birthYear;
+        return password;
+    }
+}
+
+
+
+function monthlySavings(array, livingCost) {
+    let totalEarning = array;
+    if (Array.isArray(totalEarning) === true && typeof livingCost === 'number') {
+        let sumOfEarning = 0;
+        for (let singleEarning of totalEarning) {
+            if (singleEarning >= 3000) {
+                const tax = singleEarning * (20 / 100);
+                const remainingArr = singleEarning - tax;
+                singleEarning = remainingArr;
+            }
+            sumOfEarning = sumOfEarning + singleEarning;
+        }
+        const totalSavings = sumOfEarning - livingCost;
+        if (totalSavings < 0) {
+            return "earn more";
+        }
+        else {
+            return totalSavings;
+        }
+    }
+    else {
+        return "invalid input";
     }
 }
